@@ -1,0 +1,19 @@
+# Security / Secrets
+.env
+
+# Environments
+venv/
+env/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Project Specific Data & Logs
+data/*.csv
+logs/
+cron.log
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
