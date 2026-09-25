@@ -32,7 +32,7 @@ pipeline {
                     pkill -f "python3 src/main_pipeline.py" || true
                     
                     # App එක background එකේ run කරන්න
-                    nohup python3 src/main_pipeline.py > app.log 2>&1 &
+                    JENKINS_NODE_COOKIE=dontKillMe nohup python3 src/main_pipeline.py > app.log 2>&1 &
                 '''
             }
         }
