@@ -17,3 +17,5 @@ cron.log
 # OS Generated Files
 .DS_Store
 Thumbs.db
+
+PROJECT_FLOW.md

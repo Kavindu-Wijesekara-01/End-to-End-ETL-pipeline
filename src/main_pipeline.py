@@ -4,7 +4,7 @@ from transform import transform_data
 from load import load_data
 
 def run_pipeline():
-    print("=== ETL Pipeline Started ===")
+    
     
     # CSV file eke path eka hadaganeema (data folder eka athule thiyana)
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +25,7 @@ def run_pipeline():
     # 3. Load Step
     success = load_data(transformed_df)
     if success:
-        print("=== ETL Pipeline Completed Successfully! ===")
+        print("ETL Pipeline Completed Successfully")
     else:
         print("Pipeline fail wuna: Database Load Error.")
 
