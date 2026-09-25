@@ -21,18 +21,13 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Run Pipeline') {
             steps {
-                // Jenkins තියෙන සර්වර් එකේම App එක background එකේ run කරනවා
+                // ETL Data Pipeline එක run කරනවා
                 sh '''
-                    echo "Deploying the App..."
+                    echo "Running the ETL Pipeline..."
                     source venv/bin/activate
-                    
-                    # කලින් run වෙන app එකක් තියෙනම් ඒක නවත්වන්න (Port 5000 උදාහරණයක් ලෙස)
-                    pkill -f "python3 src/main_pipeline.py" || true
-                    
-                    # App එක background එකේ run කරන්න
-                    JENKINS_NODE_COOKIE=dontKillMe nohup python3 src/main_pipeline.py > app.log 2>&1 &
+                    python3 src/main_pipeline.py
                 '''
             }
         }
